@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>lfd_jax: Learning from Demonstration Algorithms in JAX</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="hero is-medium is-bold">
+
+    <div class="hero-head">
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item minerva-header-logo">
+              lfd_jax
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroC" class="navbar-menu">
+            <div class="navbar-end">
+              <span class="navbar-item">
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=VinRobotics&repo=lfd_jax&type=star&count=true&size=large"
+                  frameborder="0" scrolling="0" width="130" height="30" title="GitHub"></iframe>
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title text-center minerva-logo"><img src="assets/logo.png"></p>
+        <h2 class="subtitle text-center minerva-subtitle">
+          lfd_jax: Learning from Demonstration Algorithms in JAX
+        </h2>
+        <div class="buttons is-fullwidth is-centered">
+          <a class="button is-success" href="https://lfd-jax-api.netlify.app/introduction">Introduction</a>
+          <a class="button" href="https://lfd-jax-api.netlify.app/">API docs</a>
+          <a class="button" href="https://github.com/VinRobotics/lfd_jax">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section main-message">
+    <div class="container has-text-centered">
+      <h2 class="title">
+        A modular and extensible library bringing state-of-the-art Learning from Demonstration algorithms to real-world
+        robotics with JAX.
+      </h2>
+      <div class="content is-medium">
+        <p>
+          <code>lfd_jax</code> is a software package developed by
+          <a href="https://vinrobotics.net" target="_blank">VinRobotics</a> that provides implementations of common
+          Learning from Demonstration (LfD) algorithms in
+          <a href="https://github.com/google/jax" target="_blank">JAX</a> for robotic applications. The package is
+          designed to be modular and extensible, making it easy to develop, test, and integrate new learning algorithms
+          into robotic systems. For API documentation, please visit the
+          <a href="https://lfd-jax-api.netlify.app/autoapi/" target="_blank">documentation</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quick-start">
+    <div class="container">
+      <div class="has-text-centered">
+        <h2 class="title">Getting Started</h2>
+      </div>
+
+      <div class="left">
+        <h2 class="title"></h2>
+
+        <div class="columns is-desktop">
+
+          <div class="column example-block">
+
+            <div class="has-text-centered">
+              <h1 class="subtitle has-text-weight-bold">Create a virtual environment</h1>
+            </div>
+
+            <div class="example">
+              <pre>
+                <code class="python">
+  # Install uv if you haven't already
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+
+  # Create and activate virtual environment with Python 3.10
+  uv venv lfd_jax_env --python=3.10
+  source lfd_jax_env/bin/activate
+                </code>
+              </pre>
+            </div>
+
+          </div>
+
+          <div class="column example-block">
+
+            <div class="has-text-centered">
+              <h1 class="subtitle has-text-weight-bold">Install the package</h1>
+            </div>
+
+            <div class="example">
+              <pre>
+                <code class="python">
+  git clone --recursive https://github.com/VinRobotics/lfd_jax.git
+
+  cd LfD_Jax
+  uv pip install -e .
+
+  # Install lerobot in editable mode
+  cd third_party/lerobot
+  uv pip install -e ".[aloha, pusht]"
+
+  # Apply the patch
+  patch -p1 < ../../third_party_patches/lerobot.patch
+                </code>
+              </pre>
+            </div>
+
+          </div>
+
+          <div class="column example-block">
+
+            <div class="has-text-centered">
+              <h1 class="subtitle has-text-weight-bold">Run some examples</h1>
+            </div>
+
+            <div class="example">
+              <pre>
+                <code class="python">
+  # Behavior cloning using LeRobot Push-T dataset
+  cd ../../lfd_jax
+  python scripts/train_bc_pusht_lerobot.py algo=bc_lerobot env=pushT_keypoint dataset_type=lerobot wandb.enable=true
+  training.steps=200000 training.eval_freq=1000 training.log_freq=1000
+
+  # Diffusion policy using LeRobot Push-T dataset
+  python scripts/train_dp_pusht_lerobot.py algo=dp_lerobot env=pushT_keypoint dataset_type=lerobot wandb.enable=true
+  training.steps=200000 training.eval_freq=1000 training.log_freq=1000
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section media">
+    <div class="has-text-centered">
+      <h1 class="title">Demonstrations</h1>
+      <div class="media-container">
+        <div class="media-row">
+          <div class="media-item">
+            <img src="assets/robot_model_Panda_isaac.png" alt="Image 1">
+          </div>
+          <div class="media-item">
+            <img src="assets/gallery.png" alt="Image 2">
+          </div>
+
+          <div class="media-item">
+            <iframe src="https://www.youtube.com/embed/k82RwXqZHY8?si=1GrdaGotcfbVC6tC" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="media-item">
+            <iframe src="https://www.youtube-nocookie.com/embed/-h1KB8ps11A?si=fapR-hXzVjyKBBta"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section main-message">
+    <div class="container has-text-centered">
+      <h2 class="title">
+        Demonstrations
+      </h2>
+      <div class="content is-medium">
+        <div class="media-row">
+          <div class="media-item">
+            <img src="assets/pushT_benchmark.png" alt="pushT_benchmark">
+          </div>
+
+          <div class="media-item">
+            <video src="assets/dp_pusht_policy.mp4" autoplay loop muted playsinline alt="dp_pushT_policy"></video>
+          </div>
+        </div>
+
+        <div class="media-row">
+          <div class="media-item">
+            <img src="assets/aloha_benchmark.png" alt="Image 3">
+          </div>
+
+          <div class="media-item">
+            <video src="assets/diffusion_policy.mp4" autoplay loop muted playsinline alt="diffusion_policy"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Copyright &copy; 2025 VinRobotics.
+        Site design adapted from <a href="https://takuseno.github.io/d3rlpy/" target="_blank">d3rlpy by Takuma Seno</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/python.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

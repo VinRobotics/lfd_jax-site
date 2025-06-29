@@ -1,0 +1,240 @@
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.minerva-subtitle {
+  color: #fff !important;
+}
+
+
+.hero {
+  background-color: rgba(29, 60, 117, 0.99);
+  background-image: url('hero.svg');
+  background-blend-mode: lighten;
+}
+
+.download {
+  color: #2c3e50;
+}
+
+.minerva-header-logo {
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.minerva-logo>img {
+  width: 400px;
+}
+
+.minerva-subtitle {
+  font-size: 2em;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.box {
+  border-radius: 0.4em;
+  border: 1px solid #34495e;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.box:hover {
+  box-shadow: 0 20px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.figure {
+  width: 80%;
+}
+
+.quick-start {
+  position: relative;
+  background: #ecf0f1;
+}
+
+.install {
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1.2em;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 14em;
+}
+
+.install>pre {
+  position: relative;
+  padding: 8px;
+}
+
+.install>pre>code {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.install-dataset {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.install-dataset>pre {
+  position: relative;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 4em;
+  width: 42em;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.install-dataset>pre>code {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.example {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.example>pre {
+  position: relative;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 22em;
+  width: auto;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+.example>pre>code {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.gif-container {
+  position: relative;
+  height: 18em;
+}
+
+.gif {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12em;
+}
+
+.video {
+  position: relative;
+}
+
+.video::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.youtube {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+}
+
+.youtube>iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.library>.container>.card {
+  border-radius: 0.4em;
+  border: 1px solid #34495e;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-out;
+  margin: 16px;
+}
+
+.library>.container>.card:hover {
+  box-shadow: 0 20px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.footer {
+  color: #2c3e50;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: white;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.media-container {
+  padding: 5em 5em;
+}
+
+.media-row {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+  flex-wrap: wrap;
+}
+
+.media-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1;
+  max-width: 48%;
+  position: relative;
+}
+
+.media-item video,
+.media-item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
